@@ -1,70 +1,58 @@
 function setup() {
   createCanvas(400, 269);
-  // fill(255, 0, 0, 125);
-  // ellipse(100, 100, 100);
-  // fill(0, 255, 0, 125);
-  // ellipse(150, 100, 100);
-  // fill(0, 0, 255, 125);
-  // ellipse(125, 150, 100);
 }
 
-var x1 = 311;
-var y1 = 227;
-var x2 = 38;
-var y2 = 258;
-var x3 = 232;
-var y3 = 118;
-var x4 = 350;
-var y4 = 551;
+let ax1 = 35;
+let ay1 = 205;
+let cx1 = 0;
+let cy1 = 0;
+let ax2 = 200;
+let ay2 = 200;
+let cx2 = 0;
+let cy2 = 0;
 
 function draw() {
-  background(0);
-  noStroke();
-  fill(137, 1, 0);
-  rect(0, 0, width, 65);
+  background(100);
+  
+  // noStroke();
+  strokeWeight(0);
+  circle(10, 10, 10);
 
-  fill(0);
-  rect(0, 28, width, 8)
+  stroke(255);
+  strokeWeight(10);
+  point(50, 10);
+
+ 
 
   beginShape();
-  vertex(0, 60);
-  vertex(0, 52);
-  vertex(width, 45);
-  vertex(width, 55);
-  endShape(CLOSE);
+  vertex(165, 115);
+  vertex(200, 115);
+  vertex(200, 150);
+  vertex(165, 150);
+  vertex(144, 51);
+  endShape();
 
-  fill(221, 176, 26)
-  quad(0, 65, width, 65, width, height, 0, height);
+cx1 = 170;
+cy1 = 213;
+ax2 = 363;
+ay2 = 206;
 
 
-  // x1 = mouseX;
-  // y1 = mouseY;
-
-
-  fill(255, 0, 0);
-  circle(x1, y1, 10);
-  fill(0, 255, 0);
-  circle(x2, y2, 10);
-  fill(0, 255, 0);
-  circle(x3, y3, 10);
-  fill(255, 0, 0);
-  circle(x4, y4, 10);
-
-  strokeWeight(10);
+  fill(255)
   stroke(0);
-  noFill();
-
-  curve(x1, y1, x2, y2, x3, y3, x4, y4);
-  // curve(85, 127, 45, 178, 337, 174, 343, 104);
-
-  // curve(14, 143, 2, 245, 168, 161, 135, 91);
+  bezier(ax1, ay1,  cx1, cx1, cx2, cy2, ax2, ay2);
 
 
-  
   noStroke();
+  fill(255, 0, 0);
+  text(mouseX, 100, 100);
+  text(mouseY, 100, 110);
 
-  // Where's my mouse!?
-  fill(255);
-  text(mouseX, 10, 10);
-  text(mouseY, 10, 20);
+
+  if(mouseIsPressed){
+    console.log(mouseX, mouseY);
+  }
+
+  //console.log(mouseX);
+  
 }
